@@ -6,3 +6,6 @@ export function createClient() {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   )
 }
+
+// alias used by login, signup, LogoutButton
+export const createSupabaseBrowserClient = createClient
