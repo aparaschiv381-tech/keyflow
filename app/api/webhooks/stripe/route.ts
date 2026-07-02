@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
   const service = createSupabaseServiceClient()
 
   if (event.type === 'checkout.session.completed') {
-    const session = event.data.object as Stripe.CheckoutSession
+    const session = event.data.object as Stripe.Checkout.Session
     const userId = session.metadata?.user_id
     if (userId && session.customer) {
       await service
